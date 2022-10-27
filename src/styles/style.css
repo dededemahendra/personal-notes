@@ -92,7 +92,7 @@ body {
   font-size: 18px;
 }
 
-.form_input .btnSubmit {
+.form_input .btn_submit {
   width: 30%;
   border: 0;
   color: var(--main-color);
@@ -104,7 +104,7 @@ body {
   font-size: 18px;
 }
 
-.form_input .btnClose {
+.form_input .btn_close {
   border: 0;
   color: #fff;
   padding: 15px 10px;
@@ -149,22 +149,22 @@ body {
   border-radius: 10px;
 }
 
-.search_note .search:focus {
+.search_note > .search:focus {
   outline: none;
 }
 
-.search_note .search::placeholder {
+.search_note > .search::placeholder {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.search_note button {
+.search_note > button {
   padding: 0 15px;
   background-color: var(--third-color);
   border: none;
   border-radius: 10px;
 }
 
-.search_note button i {
+.search_note > button > i {
   color: #000;
 }
 
@@ -179,26 +179,26 @@ body {
   color: var(--second-color);
 }
 
-.note_status .note_card {
+.note_status > .note_card {
   padding: 30px;
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: var(--main-color);
 }
 
-.note_status .note_card h1 {
-  font-size: 16px;
-  margin-bottom: 3px;
+.note_status > .note_card h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
-.note_status .note_card p {
+.note_status > .note_card > p {
   font-size: 14px;
   margin-bottom: 5px;
-  line-height: 20px;
+  line-height: 25px;
 }
 
-.note_status .note_card .action {
+.note_status > .note_card > .action {
   display: flex;
   align-self: center;
   gap: 10px;
@@ -214,21 +214,21 @@ body {
   transition: all 0.5s;
 }
 
-.note_status > .note_card > .action > .btnArsip {
+.note_status > .note_card > .action > .btn_arsip {
   padding: 10px;
   font-size: 13px;
   background-color: #e4a44a;
   color: #fff;
 }
 
-.note_status > .note_card > .action > .btnHapus {
+.note_status > .note_card > .action > .btn_hapus {
   padding: 10px;
   font-size: 13px;
   background-color: #d9534f;
   color: #fff;
 }
 
-.note_status .action button:hover {
+.note_status > .action button:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -244,7 +244,7 @@ body {
   align-items: center;
 }
 
-.modal_form .modal_content {
+.modal_form > .modal_content {
   display: flex;
   width: 50%;
   flex-direction: column;
@@ -262,7 +262,7 @@ body {
     margin-top: 10%;
   }
 
-  .note_status .note_card .action {
+  .note_status > .note_card > .action {
     display: flex;
     flex-direction: column;
   }
@@ -286,5 +286,6 @@ body {
     position: relative;
     width: 90%;
     margin: 70% auto;
+    border: 20px;
   }
 }
