@@ -5,7 +5,7 @@ function FormInput({ onSubmit, onTitleChange, onBodyChange, title, body, limit }
     <form onSubmit={onSubmit} className="form_input">
       <div className="input">
         <label htmlFor="note_title">Judul</label>
-        <input type="text" className="note_title" value={title} onChange={onTitleChange} required />
+        <input type="text" className="note_title" value={title} onChange={onTitleChange} required maxLength={50} />
         <span>Sisa karakter: {limit}</span>
       </div>
       <div className="input">

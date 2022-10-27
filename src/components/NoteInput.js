@@ -8,7 +8,7 @@ class NoteInput extends React.Component {
     this.state = {
       title: "",
       body: "",
-      limit: 100,
+      limit: 50,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -17,16 +17,11 @@ class NoteInput extends React.Component {
   }
 
   onTitleChangeEventHandler(event) {
-    if (this.state.limit > 0) {
-      this.setState((prevState) => {
-        return {
-          title: event.target.value,
-          limit: prevState.limit - 1,
-        };
-      });
-    } else {
-      alert("Tidak boleh lebih dari 100 karakter");
-    }
+    this.setState(() => {
+      return {
+        title: event.target.value.slice(0, this.state.limit),
+      };
+    });
   }
 
   onBodyChangeEventHandler(event) {
@@ -53,7 +48,14 @@ class NoteInput extends React.Component {
     return (
       <section className="section_input">
         <FormHeader title="Input Catatan" />
-        <FormInput onSubmit={this.onSubmitEventHandler} onTitleChange={this.onTitleChangeEventHandler} onBodyChange={this.onBodyChangeEventHandler} title={this.state.title} body={this.state.body} limit={this.state.limit} />
+        <FormInput
+          onSubmit={this.onSubmitEventHandler}
+          onTitleChange={this.onTitleChangeEventHandler}
+          onBodyChange={this.onBodyChangeEventHandler}
+          title={this.state.title}
+          body={this.state.body}
+          limit={this.state.limit - this.state.title.length}
+        />
       </section>
     );
   }
