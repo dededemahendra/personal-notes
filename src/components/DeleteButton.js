@@ -1,9 +1,10 @@
 import React from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 
 function DeleteButton({ id, onDelete }) {
   return (
-    <button className="btn_delete" onClick={() => onDelete(id)}>
-      Hapus
+    <button className="btnHapus" onClick={() => onDelete(id)}>
+      Hapus <AiOutlineDelete />
     </button>
   );
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import FormHeader from "./FormHeader";
+import FormInput from "./FormInput";
 
 class NoteInput extends React.Component {
   constructor(props) {
@@ -8,10 +10,12 @@ class NoteInput extends React.Component {
       body: "",
       limit: 100,
     };
+
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
     this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this);
     this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
   }
+
   onTitleChangeEventHandler(event) {
     if (this.state.limit > 0) {
       this.setState((prevState) => {
@@ -21,7 +25,7 @@ class NoteInput extends React.Component {
         };
       });
     } else {
-      alert("Tidak Boleh Melebihi 100 Karakter");
+      alert("Tidak boleh lebih dari 100 karakter");
     }
   }
 
@@ -40,9 +44,18 @@ class NoteInput extends React.Component {
       return {
         title: "",
         body: "",
-        limit: 100,
+        limit: 50,
       };
     });
+  }
+
+  render() {
+    return (
+      <section className="section_input">
+        <FormHeader title="Input Catatan" />
+        <FormInput onSubmit={this.onSubmitEventHandler} onTitleChange={this.onTitleChangeEventHandler} onBodyChange={this.onBodyChangeEventHandler} title={this.state.title} body={this.state.body} limit={this.state.limit} />
+      </section>
+    );
   }
 }
 

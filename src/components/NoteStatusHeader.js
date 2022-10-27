@@ -7,4 +7,5 @@ function NoteStatusHeader({ title }) {
     </div>
   );
 }
+
 export default NoteStatusHeader;
